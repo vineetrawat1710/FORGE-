@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "api-studio-ai-backend"
+version = "0.1.0"
+description = "AI API testing platform backend"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.111.0,<1.0.0",
+    "uvicorn[standard]>=0.30.0,<1.0.0",
+    "sqlalchemy>=2.0.30,<3.0.0",
+    "psycopg[binary]>=3.1.18,<4.0.0",
+    "pydantic-settings>=2.4.0,<3.0.0",
+    "alembic>=1.13.2,<2.0.0",
+    "pyjwt>=2.8.0,<3.0.0",
+    "bcrypt>=4.1.2,<5.0.0",
+    "httpx>=0.27.0,<1.0.0",
+    "email-validator>=2.1.1,<3.0.0",
+    "passlib[bcrypt]>=1.7.4,<2.0.0",
+]
+
+[tool.setuptools]
+packages = ["app"]
