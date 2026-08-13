@@ -34,7 +34,8 @@
 .workspace-app .main-panel{min-width:0;flex:1 1 auto;width:auto;background:transparent;overflow:auto}
 .workspace-app .workspace:has(.ai-panel.ai-closed) .main-panel{width:auto;flex:1 1 auto}
 .workspace-app .request-tabs{height:48px;padding:0 24px;background:transparent;border-bottom:1px solid var(--border, #dce4dd)}
-.workspace-app .request-tab{position:relative;border:0;border-bottom:2px solid #3f7f4b;border-radius:0;background:transparent;box-shadow:none;font-weight:600}
+.workspace-app .request-tab{position:relative;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;box-shadow:none;font-weight:600}
+.workspace-app .request-tab.active{border-bottom-color:#3f7f4b}
 .workspace-app .request-tab:before{content:'GET';display:inline-block;margin-right:8px;color:#347043;font:700 10px/1 ui-monospace,monospace}
 .workspace-app .request-tab:after{content:'•';margin-left:8px;color:#c47b29;font-size:15px;vertical-align:-1px}
 .workspace-app .builder{max-width:none;margin:0;padding:24px clamp(24px,4vw,64px) 32px;background:transparent;border:0;box-shadow:none}
