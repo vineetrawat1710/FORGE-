@@ -1,15 +1,25 @@
-from datetime import datetime, timedelta, timezone
 from uuid import UUID
 
-import jwt
-from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 
 from app.core.config import get_settings
-from app.core.security import hash_password, verify_password
+from app.core.exceptions import (
+    AuthenticationError,
+    InactiveUserError,
+    InvalidCredentialsError,
+    UserAlreadyExistsError,
+    UsernameAlreadyExistsError,
+)
+from app.core.security import (
+    create_access_token,
+    create_refresh_token,
+    decode_token,
+    hash_password,
+    verify_password,
+)
 from app.models.user import User
 from app.repositories.user_repository import UserRepository
-from app.schemas.user import LoginRequest, RegisterRequest, TokenResponse, UserResponse
+from app.schemas.user import Token, UserCreate, UserLogin, UserResponse
 
 settings = get_settings()
 
@@ -19,20 +29,14 @@ class UserService:
         self.db = db
         self.repository = UserRepository(db)
 
-    def register(self, payload: RegisterRequest) -> UserResponse:
+    def register(self, payload: UserCreate) -> UserResponse:
         existing_user = self.repository.get_by_email(str(payload.email))
         if existing_user is not None:
-            raise HTTPException(
-                status_code=status.HTTP_409_CONFLICT,
-                detail="User already exists.",
-            )
+            raise UserAlreadyExistsError("User with this email already exists.")
 
         existing_username = self.repository.get_by_username(payload.username)
         if existing_username is not None:
-            raise HTTPException(
-                status_code=status.HTTP_409_CONFLICT,
-                detail="User already exists.",
-            )
+            raise UsernameAlreadyExistsError("This username is already taken.")
 
         user = User(
             email=str(payload.email),
@@ -42,34 +46,40 @@ class UserService:
         created_user = self.repository.create(user)
         return UserResponse.model_validate(created_user)
 
-    def login(self, payload: LoginRequest) -> TokenResponse:
+    def login(self, payload: UserLogin) -> Token:
         user = self.repository.get_by_email(str(payload.email))
+        if user is None or not verify_password(payload.password, user.password_hash):
+            raise InvalidCredentialsError("Invalid email or password.")
+
+        if not user.is_active:
+            raise InactiveUserError("User account is inactive.")
+
+        return Token(
+            access_token=create_access_token(str(user.id)),
+            refresh_token=create_refresh_token(str(user.id)),
+            token_type="bearer",
+        )
+
+    def refresh(self, refresh_token: str) -> Token:
+        payload = decode_token(refresh_token, settings.refresh_secret_key, "refresh")
+        user_id = UUID(payload["sub"])
+        user = self.repository.get_by_id(user_id)
         if user is None:
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Invalid email or password.",
-            )
+            raise AuthenticationError("User not found.")
+        if not user.is_active:
+            raise InactiveUserError("User account is inactive.")
 
-        if not verify_password(payload.password, user.password_hash):
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Invalid email or password.",
-            )
-
-        token = self._create_access_token(user.id)
-        return TokenResponse(access_token=token)
+        return Token(
+            access_token=create_access_token(str(user.id)),
+            refresh_token=create_refresh_token(str(user.id)),
+            token_type="bearer",
+        )
 
     def get_profile(self, user_id: UUID) -> UserResponse:
         user = self.repository.get_by_id(user_id)
         if user is None:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="User not found.",
-            )
+            raise AuthenticationError("User not found.")
         return UserResponse.model_validate(user)
 
-    def _create_access_token(self, user_id: UUID) -> str:
-        expires_delta = timedelta(minutes=settings.access_token_expire_minutes)
-        expire_time = datetime.now(timezone.utc) + expires_delta
-        token_payload = {"sub": str(user_id), "exp": expire_time}
-        return jwt.encode(token_payload, settings.secret_key, algorithm=settings.algorithm)
+    def get_user_by_id(self, user_id: UUID) -> User | None:
+        return self.repository.get_by_id(user_id)

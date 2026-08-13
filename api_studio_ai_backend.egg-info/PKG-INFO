@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: api-studio-ai-backend
+Version: 0.1.0
+Summary: AI API testing platform backend
+Requires-Python: >=3.12
+Requires-Dist: fastapi<1.0.0,>=0.111.0
+Requires-Dist: uvicorn[standard]<1.0.0,>=0.30.0
+Requires-Dist: sqlalchemy<3.0.0,>=2.0.30
+Requires-Dist: psycopg[binary]<4.0.0,>=3.1.18
+Requires-Dist: pydantic-settings<3.0.0,>=2.4.0
+Requires-Dist: alembic<2.0.0,>=1.13.2
+Requires-Dist: python-jose[cryptography]<4.0.0,>=3.3.0
+Requires-Dist: bcrypt<5.0.0,>=4.1.2
+Requires-Dist: httpx<1.0.0,>=0.27.0
+Requires-Dist: email-validator<3.0.0,>=2.1.1
+Requires-Dist: passlib[bcrypt]<2.0.0,>=1.7.4

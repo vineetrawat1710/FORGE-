@@ -1,0 +1,12 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="420" rx="18" fill="#F5F8F5"/>
+  <path d="M70 112H1130M70 210H1130M70 308H1130" stroke="#DCE7DE"/>
+  <path d="M280 210C360 210 350 112 440 112H575M575 112C650 112 625 210 720 210H930" stroke="#B8D0BD" stroke-width="2" stroke-dasharray="6 8"/>
+  <path d="M280 210C380 210 365 308 470 308H610M610 308C690 308 690 210 790 210H930" stroke="#C5D8C9" stroke-width="2" stroke-dasharray="6 8"/>
+  <rect x="88" y="176" width="192" height="68" rx="8" fill="white" stroke="#C9D9CC"/>
+  <text x="108" y="201" fill="#477255" font-family="monospace" font-size="11" font-weight="700">GET</text><text x="108" y="224" fill="#536258" font-family="monospace" font-size="12">/users</text>
+  <rect x="440" y="78" width="178" height="68" rx="8" fill="white" stroke="#C9D9CC"/><text x="460" y="104" fill="#6A776D" font-family="monospace" font-size="10">AUTHORIZATION</text><text x="460" y="127" fill="#536258" font-family="monospace" font-size="11">environment</text>
+  <rect x="470" y="274" width="178" height="68" rx="8" fill="white" stroke="#C9D9CC"/><text x="490" y="300" fill="#6A776D" font-family="monospace" font-size="10">RESPONSE BODY</text><text x="490" y="323" fill="#536258" font-family="monospace" font-size="11">{ data: [...] }</text>
+  <rect x="930" y="176" width="182" height="68" rx="8" fill="#EEF8F0" stroke="#A9CDB0"/><text x="950" y="202" fill="#347043" font-family="monospace" font-size="12" font-weight="700">200 OK</text><text x="950" y="225" fill="#536258" font-family="monospace" font-size="11">184 ms · 2.4 KB</text>
+  <circle cx="280" cy="210" r="5" fill="#477255"/><circle cx="930" cy="210" r="5" fill="#477255"/>
+</svg>

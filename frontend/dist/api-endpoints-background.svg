@@ -1,0 +1,16 @@
+<svg width="1400" height="520" viewBox="0 0 1400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1400" height="520" fill="#F4F8F4"/>
+<path d="M80 90H1320M80 260H1320M80 430H1320" stroke="#DCE8DE" stroke-dasharray="2 8"/>
+<path d="M80 90V430M360 90V430M700 90V430M1040 90V430M1320 90V430" stroke="#DCE8DE" stroke-dasharray="2 8"/>
+<path d="M214 150C320 150 300 318 450 318C574 318 546 168 690 168C825 168 795 374 965 374C1080 374 1050 220 1210 220" stroke="#A9C7AE" stroke-width="2" stroke-dasharray="7 10"/>
+<path d="M210 364C340 364 356 166 480 166C610 166 592 350 750 350C850 350 864 126 1035 126C1120 126 1130 286 1240 286" stroke="#C1D8C5" stroke-width="2" stroke-dasharray="4 10"/>
+<g font-family="monospace">
+  <rect x="126" y="120" width="178" height="62" rx="8" fill="white" stroke="#C8D9CB"/><text x="146" y="146" fill="#477255" font-size="12" font-weight="700">GET</text><text x="146" y="166" fill="#59665C" font-size="11">/users</text>
+  <rect x="330" y="286" width="190" height="62" rx="8" fill="#F0F8F1" stroke="#B7D2BA"/><text x="350" y="312" fill="#347043" font-size="12" font-weight="700">POST</text><text x="350" y="332" fill="#59665C" font-size="11">/users</text>
+  <rect x="590" y="132" width="190" height="62" rx="8" fill="white" stroke="#C8D9CB"/><text x="610" y="158" fill="#477255" font-size="12" font-weight="700">PUT</text><text x="610" y="178" fill="#59665C" font-size="11">/users/:id</text>
+  <rect x="810" y="340" width="194" height="62" rx="8" fill="#FFF5F3" stroke="#E3C9C2"/><text x="830" y="366" fill="#B34C3F" font-size="12" font-weight="700">DELETE</text><text x="830" y="386" fill="#74615D" font-size="11">/users/:id</text>
+  <rect x="1090" y="190" width="190" height="62" rx="8" fill="#EEF8F0" stroke="#A9CDB0"/><text x="1110" y="216" fill="#347043" font-size="12" font-weight="700">200 OK</text><text x="1110" y="236" fill="#59665C" font-size="11">response · 184 ms</text>
+</g>
+<circle cx="214" cy="151" r="5" fill="#477255"/><circle cx="450" cy="318" r="5" fill="#477255"/><circle cx="690" cy="168" r="5" fill="#477255"/><circle cx="965" cy="374" r="5" fill="#B34C3F"/><circle cx="1210" cy="220" r="5" fill="#347043"/>
+<g font-family="monospace"><rect x="92" y="365" width="188" height="62" rx="8" fill="#F0F8F1" stroke="#B7D2BA"/><text x="112" y="391" fill="#347043" font-size="12" font-weight="700">POST</text><text x="112" y="411" fill="#59665C" font-size="11">/collections</text></g><circle cx="280" cy="396" r="5" fill="#347043"/>
+</svg>

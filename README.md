@@ -1,43 +1,83 @@
-# API Studio AI Backend
+﻿# Forge API Studio 🚀
 
-## Completion summary
+Forge is a modern, lightweight, and powerful API development studio designed to streamline your API testing and development workflow. It combines the best features of industry-standard API clients with a sleek, developer-friendly interface reminiscent of VS Code.
 
-### What was implemented
-- Created the initial backend project structure.
-- Added FastAPI application bootstrap with health check.
-- Added environment configuration using `pydantic-settings` and a `.env` file.
-- Added minimal database configuration with SQLAlchemy.
-- Implemented the initial user authentication module with:
-  - UUID-based user table
-  - unique email and username constraints
-  - bcrypt password hashing using `passlib`
-  - JWT access tokens with expiration
-  - Pydantic request validation
-  - secure generic authentication errors
-  - ORM-only database access
-- Added Alembic migration support for the users table.
-- Added a focused test file covering register/login behavior and duplicate validation.
+![Forge API Studio](./collections_screenshot.png)
 
-### What was verified
-- `.env` file loads successfully.
-- Required settings are validated by `pydantic-settings`.
-- Missing required configuration fails with a clear validation error.
-- Secret values are not printed in logs or app output.
-- `.env` is ignored by Git via `.gitignore`.
-- The user auth tests pass in the current environment:
-  - `py -3.13 -m pytest tests/test_user_auth.py -q`
-  - Result: `3 passed, 1 warning in 1.93s`
+## ✨ Features
 
-### Assumptions made
-- PostgreSQL is available locally for the database-backed module.
-- The project will be run in a local development environment with environment variables set in `.env`.
-- The JWT secret is stored in the environment and not committed to source control.
+- **Multi-Tab Workspace**: Open and manage multiple requests simultaneously in a familiar, tabbed interface. Unsaved changes are safely preserved in drafts as you switch between tabs.
+- **Collections & Environments**: Organize your requests into collections. Use environment variables to seamlessly switch between local, staging, and production setups.
+- **Request Builder**: Full control over HTTP methods, URLs, Headers, Query Parameters, Authorization (Bearer, Basic, API Key), and Request Bodies.
+- **AI Assistant**: Built-in AI to explain complex API responses, debug errors, and suggest improvements.
+- **Execution History**: Automatically tracks the history of your API executions, allowing you to replay previous requests instantly.
+- **Dark/Light Mode**: Beautiful, modern UI that adapts to your preferred theme.
 
-### Known limitations
-- This is the first authenticated backend module only; no future modules were built yet.
-- The current JWT warning indicates the default development secret should be replaced with a secure long secret in production.
-- Local validation was performed in Python 3.13; the project target is Python 3.12+.
+## 🛠️ Technology Stack
 
-## Notes
-- This module was completed and accepted.
-- No further modules were started.
+- **Frontend**: React, TypeScript, Vite
+- **Backend**: Python, FastAPI, SQLAlchemy
+- **Database**: PostgreSQL (or SQLite for local development)
+- **Authentication**: JWT, bcrypt
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- Python 3.12+
+- PostgreSQL (optional, defaults to SQLite for quick starts)
+
+### Backend Setup
+
+1. Navigate to the backend directory (root):
+   `ash
+   python -m venv .venv
+   .\.venv\Scripts\activate
+   pip install -r requirements.txt
+   `
+
+2. Create a .env file based on defaults.
+   `env
+   ENVIRONMENT=development
+   CORS_ORIGINS=http://localhost:5173
+   TRUSTED_HOSTS=localhost,127.0.0.1
+   `
+
+3. Run the database migrations:
+   `ash
+   alembic upgrade head
+   `
+
+4. Start the FastAPI server:
+   `ash
+   uvicorn main:app --reload --port 8000
+   `
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+   `ash
+   cd frontend
+   npm install
+   `
+
+2. Start the Vite development server:
+   `ash
+   npm run dev
+   `
+
+3. Open your browser and navigate to http://localhost:5173
+
+## 🔒 Security & Architecture
+
+- **SSRF Protection**: In production, Forge prevents Server-Side Request Forgery by blocking loopback/private IP addresses from being targeted by the execution engine.
+- **Authentication**: All endpoints (except login/register) are secured with JWT access tokens.
+- **Database**: Fully normalized relational schema using SQLAlchemy ORM.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+
+## 📝 License
+
+This project is licensed under the MIT License.

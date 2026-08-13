@@ -1,0 +1,11 @@
+fastapi<1.0.0,>=0.111.0
+uvicorn[standard]<1.0.0,>=0.30.0
+sqlalchemy<3.0.0,>=2.0.30
+psycopg[binary]<4.0.0,>=3.1.18
+pydantic-settings<3.0.0,>=2.4.0
+alembic<2.0.0,>=1.13.2
+python-jose[cryptography]<4.0.0,>=3.3.0
+bcrypt<5.0.0,>=4.1.2
+httpx<1.0.0,>=0.27.0
+email-validator<3.0.0,>=2.1.1
+passlib[bcrypt]<2.0.0,>=1.7.4

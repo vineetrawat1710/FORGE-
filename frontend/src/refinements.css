@@ -1,0 +1,15 @@
+/* Editorial refinements: movement comes from the content, not the chrome. */
+.hero-preview{animation:none;box-shadow:0 18px 44px #0003}
+.section-intro h2,.workflow-section h2{font-weight:500}
+.accent-word{color:#a8b5aa;position:relative}
+.feature-grid{background:transparent;gap:42px;padding-top:10px}
+.feature-grid article{border-top:1px solid var(--border);padding:24px 0;background:transparent;position:relative}
+.feature-grid article:nth-child(2){transform:translateY(34px)}
+.feature-index{position:absolute;right:0;top:25px;color:#5c6462;font:10px ui-monospace,monospace}
+.feature-grid h3{font-weight:500;margin-top:18px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 700ms ease,transform 700ms cubic-bezier(.2,.7,.2,1)}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.feature-grid.reveal article:nth-child(2){transition-delay:120ms}.feature-grid.reveal article:nth-child(3){transition-delay:220ms}
+.workflow-section{border-top:0}
+@media(max-width:900px){.feature-grid{gap:1px}.feature-grid article:nth-child(2){transform:none}.feature-grid article{padding:24px 0}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero-preview{animation:none}}

@@ -1,0 +1,15 @@
+<svg width="900" height="700" viewBox="0 0 900 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="900" height="700" fill="#EAF3EC"/>
+<rect x="80" y="130" width="740" height="420" rx="10" fill="#FDFEFD" stroke="#B8CFBC"/>
+<path d="M80 174H820" stroke="#D5E2D7"/><circle cx="106" cy="152" r="5" fill="#C3D8C7"/><circle cx="124" cy="152" r="5" fill="#C3D8C7"/><circle cx="142" cy="152" r="5" fill="#C3D8C7"/>
+<text x="176" y="157" fill="#7A897D" font-family="monospace" font-size="11">request.api</text>
+<text x="112" y="214" fill="#477255" font-family="monospace" font-size="13" font-weight="700">GET</text><text x="166" y="214" fill="#263C2B" font-family="monospace" font-size="13">/users</text><rect x="680" y="195" width="86" height="28" rx="4" fill="#EAF6EC"/><text x="698" y="213" fill="#347043" font-family="monospace" font-size="10">SEND ↵</text>
+<text x="112" y="256" fill="#88958B" font-family="monospace" font-size="11">01</text><text x="148" y="256" fill="#A56A22" font-family="monospace" font-size="11">Authorization:</text><text x="282" y="256" fill="#5C7462" font-family="monospace" font-size="11">Bearer {{token}}</text>
+<text x="112" y="287" fill="#88958B" font-family="monospace" font-size="11">02</text><text x="148" y="287" fill="#A56A22" font-family="monospace" font-size="11">Accept:</text><text x="235" y="287" fill="#5C7462" font-family="monospace" font-size="11">application/json</text>
+<path d="M112 320H788" stroke="#D5E2D7"/><text x="112" y="350" fill="#77877A" font-family="monospace" font-size="10">RESPONSE</text><text x="220" y="350" fill="#347043" font-family="monospace" font-size="10">200 OK</text><text x="300" y="350" fill="#77877A" font-family="monospace" font-size="10">184 ms · 2.4 KB</text>
+<text x="112" y="385" fill="#88958B" font-family="monospace" font-size="11">01</text><text x="148" y="385" fill="#8A5B96" font-family="monospace" font-size="11">{</text><text x="170" y="385" fill="#5C7462" font-family="monospace" font-size="11">"data": [</text>
+<text x="112" y="412" fill="#88958B" font-family="monospace" font-size="11">02</text><text x="170" y="412" fill="#5C7462" font-family="monospace" font-size="11">{ "id": 1, "name": "Ada" },</text>
+<text x="112" y="439" fill="#88958B" font-family="monospace" font-size="11">03</text><text x="170" y="439" fill="#5C7462" font-family="monospace" font-size="11">{ "id": 2, "name": "Grace" }</text>
+<text x="112" y="466" fill="#88958B" font-family="monospace" font-size="11">04</text><text x="148" y="466" fill="#8A5B96" font-family="monospace" font-size="11">}</text>
+<rect x="80" y="130" width="740" height="420" rx="10" stroke="#477255" stroke-opacity=".3"/>
+</svg>

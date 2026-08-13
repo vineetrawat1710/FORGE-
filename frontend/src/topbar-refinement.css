@@ -1,0 +1,19 @@
+.workspace-app .topbar{height:56px;min-height:56px;padding:0 20px;gap:18px}
+.workspace-app .workspace-switcher{display:flex;align-items:center;gap:8px;padding:8px 10px;border:0;border-left:1px solid #dce4dd;border-radius:0;background:transparent;color:#26332a;font-size:13px;font-weight:650;cursor:pointer}
+.workspace-app .workspace-switcher:before{content:'▣';color:#347043;font-size:15px}
+.workspace-app .workspace-switcher:hover{background:#3470430b}
+.workspace-app .global-search{display:flex;align-items:center;justify-content:space-between;gap:18px;width:min(420px,34vw);margin:0 auto;padding:7px 10px;border:1px solid #dce4dd;border-radius:6px;color:#7a887e;font-size:12px}
+.workspace-app .global-search:hover{border-color:#a9c7ae;color:#4e5f52}
+.workspace-app .global-search kbd{padding:2px 5px;border:1px solid #dce4dd;border-radius:4px;background:#f7faf7;color:#718076;font:11px ui-monospace,SFMono-Regular,monospace}
+.workspace-app .top-actions{position:relative;display:flex;align-items:center;gap:6px;padding-left:16px;border-left:1px solid #dce4dd}
+.workspace-app .top-actions>.icon-button,.workspace-app .top-actions>.theme-toggle,.workspace-app .top-actions>.ai-toggle{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;margin:0;padding:0;line-height:1}
+.workspace-app .logout-button{display:none!important}
+.workspace-app .top-actions>.avatar{display:none!important}
+.workspace-app .profile-menu{height:30px;padding:0 8px;border:0;border-radius:5px;background:transparent;color:#26332a;font:600 12px ui-monospace,SFMono-Regular,monospace;cursor:pointer}
+.workspace-app .profile-menu:hover{background:#3470430b}
+.workspace-app .profile-dropdown{position:absolute;right:0;top:38px;z-index:20;display:none;min-width:180px;padding:10px;border:1px solid #dce4dd;border-radius:6px;background:#fff;box-shadow:0 12px 30px #2531281a}
+.workspace-app .profile-dropdown.open{display:flex;flex-direction:column;gap:10px}
+.workspace-app .profile-dropdown strong{font-size:12px;color:#26332a}
+.workspace-app .profile-dropdown button{padding:8px;text-align:left;border:0;border-radius:4px;background:transparent;color:#b34c3f;cursor:pointer}
+.workspace-app .profile-dropdown button:hover{background:#fff2ef}
+@media (max-width:900px){.workspace-app .global-search{width:220px}.workspace-app .workspace-switcher{font-size:0}.workspace-app .workspace-switcher:after{content:'Workspace';font-size:13px}}

@@ -1,0 +1,1 @@
+.landing-nav{transition:transform 900ms cubic-bezier(.22,.8,.2,1),opacity 700ms ease}.landing-nav.nav-idle{pointer-events:none}@media(prefers-reduced-motion:reduce){.landing-nav{transition:none}}

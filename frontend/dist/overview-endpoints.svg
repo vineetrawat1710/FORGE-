@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520" role="img" aria-label="API endpoints workflow">
+  <rect width="1400" height="520" fill="#f4f8f4"/>
+  <g fill="none" stroke="#c6dcc9" stroke-width="2" stroke-dasharray="7 10">
+    <path d="M80 110H1320M80 260H1320M80 410H1320"/>
+    <path d="M80 80V440M380 80V440M700 80V440M1020 80V440M1320 80V440"/>
+    <path d="M180 150C320 150 300 330 470 330S600 150 740 150s170 180 320 180 130-150 220-150"/>
+  </g>
+  <g font-family="monospace" font-size="15">
+    <g transform="translate(120 105)"><rect width="190" height="72" rx="8" fill="#fff" stroke="#a9c7ae"/><text x="20" y="29" fill="#2f7a42" font-weight="700">GET</text><text x="20" y="53" fill="#59665c">/users</text></g>
+    <g transform="translate(330 294)"><rect width="210" height="72" rx="8" fill="#eff8f0" stroke="#a9c7ae"/><text x="20" y="29" fill="#bd6c20" font-weight="700">POST</text><text x="20" y="53" fill="#59665c">/collections</text></g>
+    <g transform="translate(590 105)"><rect width="205" height="72" rx="8" fill="#fff" stroke="#a9c7ae"/><text x="20" y="29" fill="#c57722" font-weight="700">PUT</text><text x="20" y="53" fill="#59665c">/users/:id</text></g>
+    <g transform="translate(820 294)"><rect width="220" height="72" rx="8" fill="#fff4f2" stroke="#dfaaa0"/><text x="20" y="29" fill="#bd493f" font-weight="700">DELETE</text><text x="20" y="53" fill="#59665c">/users/:id</text></g>
+    <g transform="translate(1090 160)"><rect width="210" height="72" rx="8" fill="#eff8f0" stroke="#a9c7ae"/><text x="20" y="29" fill="#2f7a42" font-weight="700">200 OK</text><text x="20" y="53" fill="#59665c">response · 184 ms</text></g>
+  </g>
+  <g fill="#3b8250"><circle cx="180" cy="141" r="6"/><circle cx="470" cy="330" r="6"/><circle cx="740" cy="141" r="6"/><circle cx="1040" cy="330" r="6"/><circle cx="1190" cy="196" r="6"/></g>
+</svg>

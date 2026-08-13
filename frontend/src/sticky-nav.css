@@ -1,0 +1,1 @@
+.landing-nav{position:sticky;top:0;z-index:20;background:#f7f8f6ee;backdrop-filter:blur(12px);transition:transform 900ms cubic-bezier(.22,.8,.2,1),opacity 700ms ease}.landing-nav.nav-idle{transform:translateY(-105%);opacity:0}.landing-nav:hover,.landing-nav:focus-within{transform:translateY(0);opacity:1}@media(prefers-reduced-motion:reduce){.landing-nav{transition:none}}

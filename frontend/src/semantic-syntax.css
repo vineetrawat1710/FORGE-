@@ -1,0 +1,37 @@
+:root{
+ --syntax-get:#4caf50;--syntax-post:#3b82f6;--syntax-put:#f59e0b;--syntax-patch:#a855f7;--syntax-delete:#ef4444;--syntax-head:#06b6d4;--syntax-options:#eab308;
+ --syntax-key:#60a5fa;--syntax-string:#22c55e;--syntax-number:#fbbf24;--syntax-bool:#c084fc;--syntax-null:#94a3b8;--syntax-env:#10b981;--syntax-muted:#6b7280;
+}
+.workspace-app select,.workspace-app input[aria-label="Request URL"],.workspace-app .json-response,.workspace-app .response-meta,.workspace-app .ai-context strong,.workspace-app .workspace-data-list small{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.workspace-app input[aria-label="Request URL"]{color:#26332a;font-weight:600}
+.workspace-app .request-line select{color:var(--syntax-get);font-weight:800}
+.workspace-app .request-line select.method-select{appearance:none;padding-left:14px;padding-right:34px;min-width:100px;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 24px) 20px,calc(100% - 18px) 20px;background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+.workspace-app .request-line select.method-get{color:var(--syntax-get)}
+.workspace-app .request-line select.method-post{color:var(--syntax-post)}
+.workspace-app .request-line select.method-put{color:var(--syntax-put)}
+.workspace-app .request-line select.method-patch{color:var(--syntax-patch)}
+.workspace-app .request-line select.method-delete{color:var(--syntax-delete)}
+.workspace-app .request-line select.method-get,.workspace-app .request-line select.method-post,.workspace-app .request-line select.method-put,.workspace-app .request-line select.method-patch,.workspace-app .request-line select.method-delete{border-color:currentColor!important;outline-color:currentColor}
+.workspace-app .request-line select.method-select:focus{outline:1px solid currentColor;outline-offset:-1px}
+.workspace-app .request-line select option[value="GET"]{color:var(--syntax-get)}
+.workspace-app .request-line select option[value="POST"]{color:var(--syntax-post)}
+.workspace-app .request-line select option[value="PUT"]{color:var(--syntax-put)}
+.workspace-app .request-line select option[value="PATCH"]{color:var(--syntax-patch)}
+.workspace-app .request-line select option[value="DELETE"]{color:var(--syntax-delete)}
+.workspace-app .request-line select option:nth-child(1){color:var(--syntax-get)}
+.workspace-app .request-line select option:nth-child(2){color:var(--syntax-post)}
+.workspace-app .request-line select option:nth-child(3){color:var(--syntax-put)}
+.workspace-app .request-line select option:nth-child(4){color:var(--syntax-patch)}
+.workspace-app .request-line select option:nth-child(5){color:var(--syntax-delete)}
+.workspace-app .request-tab:before{color:var(--syntax-get)}
+.workspace-app .response-meta.success{color:var(--syntax-get)}
+.workspace-app .json-response{color:#dce8df;tab-size:2}
+.workspace-app .json-response::selection,.workspace-app input::selection{background:#3f7f4b44;color:inherit}
+.workspace-app .workspace-data-list button b{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11px;color:var(--syntax-get)}
+.workspace-app .workspace-data-list button:nth-child(2n) b{color:var(--syntax-post)}
+.workspace-app .workspace-data-list button:nth-child(3n) b{color:var(--syntax-put)}
+.workspace-app .workspace-data-list button:nth-child(4n) b{color:var(--syntax-delete)}
+.workspace-app .parameter-row input:nth-of-type(2){color:var(--syntax-key)}
+.workspace-app .parameter-row input:nth-of-type(3){color:var(--syntax-string)}
+.workspace-app .ai-response-note,.workspace-app .ai-section-heading{color:#7c3aed}
+.workspace-app .ai-panel .suggestions button{color:#5b6470}

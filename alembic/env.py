@@ -8,6 +8,8 @@ from app.core.database import Base
 
 # Import all models so Alembic can detect them.
 from app.models.user import User
+from app.models.environment import Environment
+from app.models.request import Request, RequestHeader, RequestQueryParameter, RequestAuthorization, RequestExecutionHistory
 
 config = context.config
 
