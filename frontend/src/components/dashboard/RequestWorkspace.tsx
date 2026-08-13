@@ -90,11 +90,13 @@ export function RequestWorkspace({
             >
               {tab.name || 'Untitled request'} 
               {tab.dirty && <span style={{ color: 'var(--accent)', marginLeft: '4px', fontSize: '18px', lineHeight: '0' }}>•</span>}
-              <X 
-                size={13} 
-                onClick={(e) => { e.stopPropagation(); onCloseTab(tab.tabId); }} 
-                style={{ marginLeft: tab.dirty ? '4px' : 'auto' }}
-              />
+              {editorTabs.length > 1 && (
+                <X 
+                  size={13} 
+                  onClick={(e) => { e.stopPropagation(); onCloseTab(tab.tabId); }} 
+                  style={{ marginLeft: tab.dirty ? '4px' : 'auto' }}
+                />
+              )}
             </button>
           ))}
           <button className="add-tab" onClick={onNewRequest}><Plus size={16}/></button>

@@ -107,6 +107,8 @@ export default function DashboardConnected() {
 
   const handleCreateRequestInCollection = useCallback((collectionId: string) => {
     requestEditor.reset(collectionId)
+    setActiveNav('Collections')
+    setActiveHistoryId(null)
   }, [requestEditor])
 
   return <div className={`app-shell workspace-app ${lightTheme ? 'light-theme' : ''}`}>
@@ -126,9 +128,20 @@ export default function DashboardConnected() {
         collections={workspace.collections}
         requests={workspace.requests}
         activeRequestId={requestEditor.active?.id}
-        onActiveNavChange={setActiveNav}
-        onNewRequest={() => requestEditor.reset()}
-        onOpenRequest={requestEditor.openRequest}
+        onActiveNavChange={(nav) => {
+          setActiveNav(nav)
+          setActiveHistoryId(null)
+        }}
+        onNewRequest={() => {
+          requestEditor.reset()
+          setActiveNav('Collections')
+          setActiveHistoryId(null)
+        }}
+        onOpenRequest={(req) => {
+          requestEditor.openRequest(req)
+          setActiveNav('Collections')
+          setActiveHistoryId(null)
+        }}
         onOpenAI={() => setAiOpen(true)}
         onRefresh={workspace.load}
         onCreateRequestInCollection={handleCreateRequestInCollection}
